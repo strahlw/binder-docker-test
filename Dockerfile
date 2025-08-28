@@ -8,6 +8,9 @@ RUN apt-get update && apt-get install -y \
     wget \
     build-essential \
     git \
+    libgfortran5 \
+    liblapack3 \
+    liblapack-dev \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 # add the user 
 ARG NB_USER=jovyan
@@ -29,6 +32,7 @@ ENV PATH=${HOME}/conda/bin:$PATH
 # copy contents to docker image 
 COPY environment.yml ${HOME}
 COPY hda_flowsheet_solution.ipynb ${HOME}
+COPY ipopt_test.py ${HOME}
 USER root
 RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
