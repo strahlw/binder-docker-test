@@ -30,5 +30,6 @@ RUN conda env create -p ${HOME}/idaes-pse -f environment.yml
 RUN conda init bash
 SHELL ["/bin/bash", "--login", "-c"]
 RUN conda init && conda activate ${HOME}/idaes-pse && python -m ipykernel install --user --name=idaes-pse --display-name="Python (idaes-pse)"
+RUN conda init && conda activate ${HOME}/idaes-pse && idaes get-extensions
 ENTRYPOINT []
 
