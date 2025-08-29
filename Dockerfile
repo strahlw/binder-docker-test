@@ -31,8 +31,6 @@ RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -
 ENV PATH=${HOME}/conda/bin:$PATH
 # copy contents to docker image 
 COPY environment.yml ${HOME}
-COPY hda_flowsheet_solution.ipynb ${HOME}
-COPY ipopt_test.py ${HOME}
 USER root
 RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
