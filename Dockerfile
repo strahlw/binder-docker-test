@@ -49,4 +49,5 @@ ENV PATH="$HOME/idaes-pse/bin:$PATH"
 RUN echo "source activate idaes-pse" > ~/.bashrc
 RUN conda run -p ${HOME}/idaes-pse python -m ipykernel install --user --name=idaes-pse --display-name="Python (idaes-pse)"
 RUN conda run -p ${HOME}/idaes-pse idaes get-extensions --to /home/jovyan/idaes-pse/bin
+RUN cp -r ${HOME}/idaes-pse/lib/python3.12/site-packages/idaes_examples/notebooks/docs/tut ${HOME}/
 ENTRYPOINT []
