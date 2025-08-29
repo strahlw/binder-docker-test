@@ -1,9 +1,12 @@
 name: idaes-pse
 channels:
   - conda-forge
-  - defaults
+  - nodefaults
 dependencies:
   - python=3.12
+  - pip
   - pip:
-    - git+https://github.com/IDAES/examples.git@2.8_rel
-    - git+https://github.com/IDAES/idaes-pse.git@scaling_toolbox
+    - idaes-pse
+    - idaes-examples
+    # - git+https://github.com/IDAES/examples.git@2.8_rel
+    # - git+https://github.com/IDAES/idaes-pse.git@scaling_toolbox
